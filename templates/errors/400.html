@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Solicitud Incorrecta - BYC Core{% endblock %}
+
+{% block content %}
+<div class="container-fluid h-100 d-flex align-items-center justify-content-center">
+    <div class="row w-100">
+        <div class="col-lg-6 mx-auto text-center">
+            
+            <!-- Icono de Error -->
+            <div class="error-icon mb-4">
+                <i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 6rem;"></i>
+            </div>
+            
+            <!-- Código de Error -->
+            <h1 class="display-1 fw-bold text-warning mb-3">400</h1>
+            
+            <!-- Título del Error -->
+            <h2 class="h3 mb-3 text-gray-800">Solicitud Incorrecta</h2>
+            
+            <!-- Descripción -->
+            <p class="lead text-muted mb-4">
+                La solicitud enviada al servidor no es válida o está mal formada.
+            </p>
+            
+            <!-- Información Técnica -->
+            <div class="error-info mb-4">
+                <div class="alert alert-warning" role="alert">
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    <strong>Error de Formato</strong><br>
+                    Los datos enviados no cumplen con el formato esperado por el servidor.
+                </div>
+            </div>
+            
+            <!-- Sugerencias -->
+            <div class="error-suggestions mb-4">
+                <p class="text-muted">Posibles soluciones:</p>
+                <ul class="list-unstyled text-muted">
+                    <li><i class="bi bi-arrow-right me-2"></i>Verificar los datos del formulario</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Refrescar la página e intentar nuevamente</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Contactar al soporte técnico</li>
+                </ul>
+            </div>
+            
+            <!-- Botones de Acción -->
+            <div class="error-actions">
+                <a href="{% url 'home' %}" class="btn btn-primary me-3">
+                    <i class="bi bi-house me-2"></i>Ir al Dashboard
+                </a>
+                <button onclick="history.back()" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-2"></i>Página Anterior
+                </button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .main-content {
+        height: calc(100vh - var(--navbar-height));
+        display: flex;
+        align-items: center;
+    }
+    
+    .error-icon {
+        animation: wobble 2s ease-in-out infinite;
+    }
+    
+    .error-suggestions ul {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    @keyframes wobble {
+        0%, 100% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(-3deg);
+        }
+        75% {
+            transform: rotate(3deg);
+        }
+    }
+    
+    .text-gray-800 {
+        color: #5a5c69 !important;
+    }
+</style>
+{% endblock %}

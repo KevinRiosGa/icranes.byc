@@ -1,0 +1,85 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Página No Encontrada - BYC Core{% endblock %}
+
+{% block content %}
+<div class="container-fluid h-100 d-flex align-items-center justify-content-center">
+    <div class="row w-100">
+        <div class="col-lg-6 mx-auto text-center">
+            
+            <!-- Icono de Error -->
+            <div class="error-icon mb-4">
+                <i class="bi bi-exclamation-triangle-fill text-warning" style="font-size: 6rem;"></i>
+            </div>
+            
+            <!-- Código de Error -->
+            <h1 class="display-1 fw-bold text-primary mb-3">404</h1>
+            
+            <!-- Título del Error -->
+            <h2 class="h3 mb-3 text-gray-800">Página No Encontrada</h2>
+            
+            <!-- Descripción -->
+            <p class="lead text-muted mb-4">
+                Lo sentimos, la página que estás buscando no existe o ha sido movida.
+            </p>
+            
+            <!-- Sugerencias -->
+            <div class="error-suggestions mb-4">
+                <p class="text-muted">Puedes intentar:</p>
+                <ul class="list-unstyled text-muted">
+                    <li><i class="bi bi-arrow-right me-2"></i>Verificar la URL en la barra de direcciones</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Regresar a la página anterior</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Ir al dashboard principal</li>
+                </ul>
+            </div>
+            
+            <!-- Botones de Acción -->
+            <div class="error-actions">
+                <a href="{% url 'home' %}" class="btn btn-primary me-3">
+                    <i class="bi bi-house me-2"></i>Ir al Dashboard
+                </a>
+                <button onclick="history.back()" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-2"></i>Página Anterior
+                </button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .main-content {
+        height: calc(100vh - var(--navbar-height));
+        display: flex;
+        align-items: center;
+    }
+    
+    .error-icon {
+        animation: bounce 2s infinite;
+    }
+    
+    .error-suggestions ul {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+    
+    .text-gray-800 {
+        color: #5a5c69 !important;
+    }
+</style>
+{% endblock %}

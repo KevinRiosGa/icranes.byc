@@ -1,0 +1,580 @@
+/* ========================================
+   BYC CORE - ESTILOS PERSONALIZADOS
+   Sistema de Gestión Empresarial
+   ======================================== */
+
+/* Variables CSS para colores consistentes */
+:root {
+    --sidebar-bg: #212122;
+    --navbar-bg: #212122;
+    --sidebar-width: 230px;
+    --navbar-height: 60px;
+    --sidebar-transition: all 0.3s ease-in-out;
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --active-bg: rgba(0, 123, 255, 0.2);
+    --text-light: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   LAYOUT GENERAL
+   ======================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* ========================================
+   NAVBAR SUPERIOR
+   ======================================== */
+
+#main-navbar {
+    background-color: var(--navbar-bg) !important;
+    height: var(--navbar-height);
+    z-index: 1040;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#main-navbar .navbar-brand {
+    color: var(--text-light) !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+
+/* Botón hamburguesa */
+#sidebar-toggle {
+    color: var(--text-light);
+    transition: var(--sidebar-transition);
+}
+
+#sidebar-toggle:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Dropdowns del navbar */
+.notifications-dropdown,
+.user-dropdown {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-width: 280px;
+}
+
+.user-info {
+    max-width: 150px;
+}
+
+/* ========================================
+   SIDEBAR LATERAL
+   ======================================== */
+
+.sidebar {
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--navbar-height));
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    background-color: var(--sidebar-bg);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1035;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    /* Por defecto oculto en desktop */
+    transform: translateX(-100%);
+}
+
+/* Sidebar visible */
+.sidebar.show {
+    transform: translateX(0);
+}
+
+.sidebar-content {
+    padding: 0.4rem;
+    height: calc(100vh - var(--navbar-height));
+}
+
+/* Estados de sidebar colapsado eliminados - ahora solo se oculta/muestra completamente */
+
+
+/* ========================================
+   SECCIONES DEL SIDEBAR
+   ======================================== */
+
+.sidebar-section {
+    margin-bottom: 0.6rem;
+}
+
+.sidebar-section-title {
+    color: var(--text-muted);
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-text {
+    transition: var(--sidebar-transition);
+}
+
+/* ========================================
+   ELEMENTOS DEL MENU
+   ======================================== */
+
+.sidebar-item {
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 1rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--sidebar-transition);
+    position: relative;
+    font-size: 0.9rem;
+    min-height: 32px;
+}
+
+.sidebar-link:hover {
+    color: var(--text-light);
+    background-color: var(--hover-bg);
+    border-radius: 0.5rem;
+}
+
+.sidebar-link.active,
+.sidebar-link[aria-expanded="true"] {
+    color: var(--text-light);
+    border-radius: 0.5rem;
+}
+
+.sidebar-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+    text-align: center;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.sidebar-text {
+    flex: 1;
+    transition: var(--sidebar-transition);
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.sidebar-arrow {
+    margin-left: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+}
+
+.sidebar-link[aria-expanded="true"] .sidebar-arrow {
+    transform: rotate(180deg);
+}
+
+/* ========================================
+   SUBMENÚS NIVEL 1
+   ======================================== */
+
+.sidebar-submenu {
+    background-color: var(--sidebar-bg);
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-subitem {
+    margin-bottom: 0.125rem;
+}
+
+.sidebar-sublink {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 1.5rem 0.3rem 3rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--sidebar-transition);
+    font-size: 0.9rem;
+    min-height: 32px;
+}
+
+.sidebar-sublink:hover {
+    color: var(--text-light);
+    background-color: var(--hover-bg);
+    border-radius: 0.5rem;
+}
+
+
+.sidebar-subicon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.sidebar-subtext {
+    flex: 1;
+    transition: var(--sidebar-transition);
+    white-space: nowrap;
+    font-size: 0.9rem;
+}   
+
+.sidebar-subarrow {
+    margin-left: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    font-size: 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+}
+
+.sidebar-sublink[aria-expanded="true"] .sidebar-subarrow {
+    transform: rotate(180deg);
+}
+
+/* ========================================
+   SUBMENÚS NIVEL 2
+   ======================================== */
+
+.sidebar-sub-submenu {
+    background-color: var(--sidebar-bg);
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-sub-sublink {
+    display: block;
+    padding: 0.3rem 1.5rem 0.3rem 4.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--sidebar-transition);
+    font-size: 0.9rem;
+    min-height: 32px;
+}
+
+.sidebar-sub-sublink:hover {
+    color: var(--text-light);
+    background-color: var(--hover-bg);
+    border-radius: 0.5rem;
+}
+
+.sidebar-sub-sublink.active {
+    background-color: var(--active-bg);
+    color: var(--text-light);
+    border-radius: 0.5rem;
+}
+
+.sidebar-sub-subtext {
+    transition: var(--sidebar-transition);
+    white-space: nowrap;
+    font-size: 0.9rem;
+    min-height: 32px;
+}
+
+/* ========================================
+   OVERLAY PARA MÓVIL
+   ======================================== */
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1030;
+    display: none;
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+   ======================================== */
+
+.main-content {
+    margin-left: 0;
+    margin-top: var(--navbar-height);
+    height: calc(100vh - var(--navbar-height));
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+    width: 100%;
+    background-color: #f8f9fa;
+    /* Evitar saltos de layout */
+    position: relative;
+    /* Scroll independiente */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Main content cuando sidebar está visible */
+.main-content:not(.sidebar-hidden) {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+}
+
+/* Main content cuando sidebar está oculto */
+.main-content.sidebar-hidden {
+    margin-left: 0;
+    width: 100%;
+}
+
+.content-container {
+    padding: 2rem;
+    /* El main-content ya maneja la altura, no necesitamos min-height aquí */
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 991.98px) {
+    /* En móvil el sidebar siempre se oculta por defecto */
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    
+    /* En móvil el main content siempre ocupa todo el ancho */
+    .main-content,
+    .main-content:not(.sidebar-hidden),
+    .main-content.sidebar-hidden {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .sidebar-header {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+
+/* Móviles */
+@media (max-width: 575.98px) {
+    .sidebar {
+        width: 100% !important;
+    }
+    
+    .content-container {
+        padding: 1rem;
+    }
+    
+    .user-info {
+        display: none !important;
+    }
+}
+
+/* ========================================
+   ANIMACIONES Y TRANSICIONES
+   ======================================== */
+
+/* Smooth scrolling para el sidebar */
+.sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Smooth scrolling para el main content */
+.main-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de entrada para tooltips */
+/* Animación fadeIn eliminada - no se utiliza */
+
+/* Estados de focus para accesibilidad - outline eliminado */
+.sidebar-link:focus,
+.sidebar-sublink:focus,
+.sidebar-sub-sublink:focus {
+    outline: none;
+}
+
+/* Eliminar outline de botones y elementos interactivos del sidebar */
+.sidebar button:focus,
+.sidebar a:focus,
+.sidebar [tabindex]:focus {
+    outline: none;
+}
+
+/* Eliminar outline azul por defecto del navegador */
+.sidebar *:focus {
+    outline: none;
+}
+
+/* Eliminar outline específicamente en elementos collapse de Bootstrap */
+.sidebar [data-bs-toggle]:focus,
+.sidebar [aria-expanded]:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Indicador de carga */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top: 2px solid transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   UTILIDADES
+   ======================================== */
+
+.text-truncate-custom {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+/* Clase fade-in eliminada - no se utiliza */
+
+/* Estados de notificaciones */
+.badge-notification {
+    animation: pulse 2s infinite;
+}
+
+/* ========================================
+   ESTILOS COMUNES PARA DASHBOARDS
+   ======================================== */
+
+/* Bordes de colores para tarjetas */
+.border-left-primary {
+    border-left: 0.25rem solid #4e73df !important;
+}
+
+.border-left-success {
+    border-left: 0.25rem solid #1cc88a !important;
+}
+
+.border-left-info {
+    border-left: 0.25rem solid #36b9cc !important;
+}
+
+.border-left-warning {
+    border-left: 0.25rem solid #f6c23e !important;
+}
+
+/* Colores de texto comunes */
+.text-gray-800 {
+    color: #5a5c69 !important;
+}
+
+.text-white-25 {
+    color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Tamaños de texto adicionales */
+.text-lg {
+    font-size: 1.5rem;
+}
+
+/* Elementos de progreso */
+.progress-sm {
+    height: 0.5rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}

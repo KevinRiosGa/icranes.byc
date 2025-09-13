@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}BYC Core - Sistema de Gestión{% endblock %}</title>
+    
+    <!-- Bootstrap CSS Local -->
+    <link href="{% load static %}{% static 'vendors/bootstrap-5.3.7/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+    <!-- Bootstrap Icons Local -->
+    <link href="{% load static %}{% static 'vendors/bootstrap-icons-1.11.3/css/bootstrap-icons.min.css' %}" rel="stylesheet">
+    
+    <!-- DataTables CSS Local -->
+    <link href="{% load static %}{% static 'vendors/datatables-2.3.2/css/datatables.min.css' %}" rel="stylesheet">
+    
+    <!-- Estilos personalizados -->
+    <link href="{% load static %}{% static 'css/styles.css' %}" rel="stylesheet">
+    
+    {% block extra_head %}
+    <!-- Bloque para CSS/JS adicional por vista -->
+    {% endblock %}
+</head>
+<body>
+    <!-- Wrapper principal del layout -->
+    <div class="wrapper">
+        
+        <!-- Navbar Superior -->
+        {% include 'includes/navbar.html' %}
+        
+        <!-- Sidebar Lateral -->
+        {% include 'includes/sidebar.html' %}
+        
+        <!-- Área de Contenido Principal -->
+        <main class="main-content" id="main-content">
+            <!-- Contenedor principal del contenido -->
+            <div class="content-container">
+                
+                {% block header_content %}
+                <!-- Bloque para contenido adicional en header de página -->
+                {% endblock %}
+                
+                {% block content %}
+                <!-- Contenido principal de cada vista -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Bienvenido al Sistema BYC Core</h1>
+                            <p class="lead">Sistema de gestión empresarial integrado</p>
+                        </div>
+                    </div>
+                </div>
+                {% endblock %}
+                
+            </div>
+        </main>
+        
+    </div>
+    
+    <!-- Scripts JavaScript Locales -->
+    
+    <!-- jQuery Local -->
+    <script src="{% load static %}{% static 'vendors/jQuery-3.7.1/js/jquery-3.7.1.js' %}"></script>
+    
+    <!-- Bootstrap JS Local -->
+    <script src="{% load static %}{% static 'vendors/bootstrap-5.3.7/js/bootstrap.min.js' %}"></script>
+    
+    <!-- DataTables JS Local -->
+    <script src="{% load static %}{% static 'vendors/datatables-2.3.2/js/datatables.min.js' %}"></script>
+    
+    <!-- Script principal personalizado -->
+    <script src="{% load static %}{% static 'js/main.js' %}"></script>
+    
+    {% block extra_js %}
+    <!-- Bloque para JavaScript adicional por vista -->
+    {% endblock %}
+    
+</body>
+</html>

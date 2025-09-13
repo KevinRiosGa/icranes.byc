@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Acceso Denegado - BYC Core{% endblock %}
+
+{% block content %}
+<div class="container-fluid h-100 d-flex align-items-center justify-content-center">
+    <div class="row w-100">
+        <div class="col-lg-6 mx-auto text-center">
+            
+            <!-- Icono de Error -->
+            <div class="error-icon mb-4">
+                <i class="bi bi-shield-fill-exclamation text-danger" style="font-size: 6rem;"></i>
+            </div>
+            
+            <!-- Código de Error -->
+            <h1 class="display-1 fw-bold text-danger mb-3">403</h1>
+            
+            <!-- Título del Error -->
+            <h2 class="h3 mb-3 text-gray-800">Acceso Denegado</h2>
+            
+            <!-- Descripción -->
+            <p class="lead text-muted mb-4">
+                No tienes permisos para acceder a esta página o recurso.
+            </p>
+            
+            <!-- Información de Seguridad -->
+            <div class="error-info mb-4">
+                <div class="alert alert-danger" role="alert">
+                    <i class="bi bi-shield-exclamation me-2"></i>
+                    <strong>Acceso Restringido</strong><br>
+                    Esta página requiere permisos especiales que tu cuenta actual no posee.
+                </div>
+            </div>
+            
+            <!-- Sugerencias -->
+            <div class="error-suggestions mb-4">
+                <p class="text-muted">¿Qué puedes hacer?</p>
+                <ul class="list-unstyled text-muted">
+                    <li><i class="bi bi-arrow-right me-2"></i>Contactar al administrador del sistema</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Verificar tus credenciales de acceso</li>
+                    <li><i class="bi bi-arrow-right me-2"></i>Regresar a una página autorizada</li>
+                </ul>
+            </div>
+            
+            <!-- Botones de Acción -->
+            <div class="error-actions">
+                <a href="{% url 'home' %}" class="btn btn-primary me-3">
+                    <i class="bi bi-house me-2"></i>Ir al Dashboard
+                </a>
+                <button onclick="history.back()" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-2"></i>Página Anterior
+                </button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .main-content {
+        height: calc(100vh - var(--navbar-height));
+        display: flex;
+        align-items: center;
+    }
+    
+    .error-icon {
+        animation: shake 1s ease-in-out infinite;
+    }
+    
+    .error-suggestions ul {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    @keyframes shake {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(-5px);
+        }
+        75% {
+            transform: translateX(5px);
+        }
+    }
+    
+    .text-gray-800 {
+        color: #5a5c69 !important;
+    }
+</style>
+{% endblock %}

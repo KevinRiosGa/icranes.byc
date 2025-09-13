@@ -1,0 +1,259 @@
+{% load static %}
+
+<!-- Sidebar de Navegación Lateral -->
+<nav class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+
+        <!-- Sección MENU -->
+        <div class="sidebar-section">
+            <h6 class="sidebar-section-title">
+                <span class="section-text">GESTIÓN DE PERSONAL</span>
+            </h6>
+            
+            <!-- Dashboards con subniveles -->
+            <div class="sidebar-item">
+                <a href="#dashboards-submenu" class="sidebar-link" data-bs-toggle="collapse" aria-expanded="false">
+                    <i class="bi bi-person-vcard sidebar-icon"></i>
+                    <span class="sidebar-text">Ficha personal</span>
+                    <i class="bi bi-chevron-down sidebar-arrow"></i>
+                </a>
+                <div class="collapse sidebar-submenu" id="dashboards-submenu">
+                    <div class="sidebar-subitem">
+                        <a href="#analytics-submenu" class="sidebar-sublink" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="bi bi-graph-up sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Analytics</span>
+                            <i class="bi bi-chevron-down sidebar-subarrow"></i>
+                        </a>
+                        <div class="collapse sidebar-sub-submenu" id="analytics-submenu">
+                            <a href="#" class="sidebar-sub-sublink active">
+                                <span class="sidebar-sub-subtext">Commerce</span>
+                            </a>
+                            <a href="#" class="sidebar-sub-sublink">
+                                <span class="sidebar-sub-subtext">Sales</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sidebar-subitem">
+                        <a href="#minimal-submenu" class="sidebar-sublink" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="bi bi-layout-text-window sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Minimal</span>
+                            <i class="bi bi-chevron-down sidebar-subarrow"></i>
+                        </a>
+                        <div class="collapse sidebar-sub-submenu" id="minimal-submenu">
+                            <a href="#" class="sidebar-sub-sublink">
+                                <span class="sidebar-sub-subtext">Variation 1</span>
+                            </a>
+                            <a href="#" class="sidebar-sub-sublink">
+                                <span class="sidebar-sub-subtext">Variation 2</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-people sidebar-subicon"></i>
+                            <span class="sidebar-subtext">CRM</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pages -->
+            <div class="sidebar-item">
+                <a href="#pages-submenu" class="sidebar-link" data-bs-toggle="collapse" aria-expanded="false">
+                    <i class="bi bi-file-earmark-text sidebar-icon"></i>
+                    <span class="sidebar-text">Pages</span>
+                    <i class="bi bi-chevron-down sidebar-arrow"></i>
+                </a>
+                <div class="collapse sidebar-submenu" id="pages-submenu">
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-house sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Inicio</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-info-circle sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Acerca de</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Applications -->
+            <div class="sidebar-item">
+                <a href="#applications-submenu" class="sidebar-link" data-bs-toggle="collapse" aria-expanded="false">
+                    <i class="bi bi-grid-3x3-gap sidebar-icon"></i>
+                    <span class="sidebar-text">Applications</span>
+                    <i class="bi bi-chevron-down sidebar-arrow"></i>
+                </a>
+                <div class="collapse sidebar-submenu" id="applications-submenu">
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-calendar sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Calendario</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-envelope sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección UI COMPONENTS -->
+        <div class="sidebar-section">
+            <h6 class="sidebar-section-title">
+                <span class="section-text">MAQUINARIAS</span>
+            </h6>
+            
+            <!-- Elements -->
+            <div class="sidebar-item">
+                <a href="#elements-submenu" class="sidebar-link" data-bs-toggle="collapse" aria-expanded="false">
+                    <i class="bi bi-clipboard sidebar-icon"></i>
+                    <span class="sidebar-text">Orden de trabajo</span>
+                    <i class="bi bi-chevron-down sidebar-arrow"></i>
+                </a>
+                <div class="collapse sidebar-submenu" id="elements-submenu">
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-square sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Botones</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-card-text sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Tarjetas</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Components -->
+            <div class="sidebar-item">
+                <a href="#components-submenu" class="sidebar-link" data-bs-toggle="collapse" aria-expanded="false">
+                    <i class="bi bi-puzzle sidebar-icon"></i>
+                    <span class="sidebar-text">Components</span>
+                    <i class="bi bi-chevron-down sidebar-arrow"></i>
+                </a>
+                <div class="collapse sidebar-submenu" id="components-submenu">
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-list-ul sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Listas</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-image sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Media</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Bases maquinarias -->
+            <div class="sidebar-item">
+                <a href="#maq-bases-submenu" class="sidebar-link" data-bs-toggle="collapse" aria-expanded="false">
+                    <i class="bi bi-database sidebar-icon"></i>
+                    <span class="sidebar-text">Bases</span>
+                    <i class="bi bi-chevron-down sidebar-arrow"></i>
+                </a>
+                <div class="collapse sidebar-submenu" id="maq-bases-submenu">
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-grid sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Tipo equipos</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-grid-3x2 sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Marcas</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-subitem">
+                        <a href="#" class="sidebar-sublink">
+                            <i class="bi bi-grid-3x3-gap sidebar-subicon"></i>
+                            <span class="sidebar-subtext">Modelos</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sección DASHBOARD WIDGETS -->
+        <div class="sidebar-section">
+            <h6 class="sidebar-section-title">
+                <span class="section-text">PLANIFICACIÓN</span>
+            </h6>          
+            <!-- Chart Boxes -->
+            <div class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <i class="bi bi-calendar2-week sidebar-icon"></i>
+                    <span class="sidebar-text">Planificación personal</span>
+                </a>
+            </div>      
+            <div class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <i class="bi bi-calendar2-range sidebar-icon"></i>
+                    <span class="sidebar-text">Planificación maquinarias</span>
+                </a>
+            </div>
+        </div>
+        <!-- Sección BASES -->
+        <div class="sidebar-section">
+            <h6 class="sidebar-section-title">
+                <span class="section-text">BASES</span>
+            </h6>
+            <!-- Gestión de usuarios -->
+            <div class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <i class="bi bi-people sidebar-icon"></i>
+                    <span class="sidebar-text">Gestión usuarios</span>
+                </a>
+            </div>
+            <!-- Maestros con subniveles -->
+            <div class="sidebar-item">
+                <a href="#bases-submenu" class="sidebar-link" data-bs-toggle="collapse" aria-expanded="false">
+                    <i class="bi bi-database sidebar-icon"></i>
+                    <span class="sidebar-text">Bases</span>
+                    <i class="bi bi-chevron-down sidebar-arrow"></i>
+                </a>
+                <div class="collapse sidebar-submenu" id="bases-submenu">
+                    <div class="sidebar-subitem">
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <i class="bi bi-geo sidebar-subicon"></i>
+                                <span class="sidebar-subtext">Comunas</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <i class="bi bi-buildings sidebar-subicon"></i>
+                                <span class="sidebar-subtext">Empresas</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <i class="bi bi-geo-alt sidebar-subicon"></i>
+                                <span class="sidebar-subtext">Regiones</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <i class="bi bi-rulers sidebar-subicon"></i>
+                                <span class="sidebar-subtext">Un. medida</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Overlay para cerrar sidebar en móvil -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
