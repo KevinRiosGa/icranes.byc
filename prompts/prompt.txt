@@ -1,0 +1,42 @@
+Genera un archivo `base.html`,`navbar.html`,`sidebar.html` para Django (siguiendo la estructra que se encuentra actualmente en el proyecto) que replique el diseño visual del template de las imagenes adjuntas.
+
+**Archivos:** 
+* base_1: Este archivo muestra como debe ser el diseño en general, en donde se muestra el navbar, sidebar y el main content.
+* base_2: Este archivo muestra que existen mas de un subnivel para algún item del sidebar 
+* base_3: Este archivo muestra como se debería ver el sidebar colapsado.
+
+* Nota: Hay una funcionalidad que no se ve en las imágenes pero cuando el sidebar se encuentra colapsado y el puntero pasa sobre los íconos, este muestra el sidebar completo, si el puntero sale del sidebar se vuelve a colapsar mostrando solo los íconos. Esto solo pasa cuando el sidebar se encuentra colapsado, al presionar nuevamente el boton hamburguesa el sidebar se muestra completo y fijo.
+
+
+**Elementos principales del layout:**
+
+1.  **Barra de Navegación Superior (Navbar - Header):**
+    * Fija en la parte superior.
+    * Con un logo a la izquierda (`logo_dark_mode.webp`).
+    * Un botón tipo "hamburguesa" para alternar la visibilidad del sidebar, que se despliega o colapsa al hacer clic, con la funcionalidad completa de la animación que se ve en el video.
+    * A la derecha, notificaciones y un avatar de usuario con nombre y tipo de usuario (Que se configurará más adelante, por ahora que sea un texto estático).
+    * El color de fondo debe ser #343a40.
+
+2.  **Sidebar de Navegación Lateral (Sidebar):**
+    * Fijo a la izquierda, que se puede colapsar para mostrar solo los iconos, y expandir para mostrar texto y iconos.
+    * Debe tener secciones de "UI COMPONENTS", "DASHBOARD WIDGETS", "FORMS" y "CHARTS", cada una con sus respectivos enlaces o sub-elementos.
+    * Los elementos de menú deben tener enlaces (`<a>`) y, en el caso de tener sub-elementos (como en `Analytics`), deben poder ser expandidos y contraídos.
+    * El color de fondo debe ser #343a40.
+
+3.  **Área de Contenido Principal (Main Content):**
+    * Debe ocupar el espacio restante a la derecha del sidebar y debajo de la barra superior.
+    * El área de contenido debe ajustarse dinámicamente en ancho cuando el sidebar se colapsa o se expande.
+
+**Tecnología y Funcionalidad:**
+
+* Asume el uso de **Bootstrap 5** para la estructura, la barra de navegación, el sidebar y los componentes (botones, avatares, etc.). Utiliza las clases de Bootstrap pertinentes.
+* No trabajes con los CDN, los archivos se encuentran localmente en la carpeta de vendors.
+* Provee el código **JavaScript** necesario para la funcionalidad de colapsar/expandir el sidebar al hacer clic en el botón de hamburguesa. Este JS debe gestionar las clases CSS para la transición y el ajuste del área de contenido.
+* Incluye enlaces básicos para un archivo CSS global (`static/css/styles.css`) y un archivo JS global (`static/js/main.js`).
+
+**Requisitos Adicionales:**
+
+* Añade comentarios detallados en el código HTML y JavaScript para explicar la función de cada sección y el mecanismo de la animación.
+* La estructura debe ser completamente responsiva.
+* Usa Bootstrap Icons.
+* Genera la documentación correspondiente

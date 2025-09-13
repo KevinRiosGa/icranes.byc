@@ -1,0 +1,120 @@
+**🎯 OBJETIVO PRINCIPAL:**
+Crear un sistema completo de autenticación y gestión de usuarios con roles y permisos granulares para el proyecto BYC, que permita administrar accesos, profiles y seguridad de manera escalable.
+
+**📱 TIPO DE PROYECTO:**
+- [x] Funcionalidad nueva para app existente
+- [x] Backend con Frontend integrado
+
+**📋 REQUERIMIENTOS FUNCIONALES:**
+1. **Sistema de Autenticación:**
+   - Login/Logout con validación robusta
+   - Sesiones seguras con timeout configurable
+
+2. **Gestión de Usuarios:**
+   - CRUD completo de usuarios
+   - Profiles personalizables
+   - Historial de actividad/logs de acceso solo para el administrador
+   - Estado de usuarios (activo, inactivo, bloqueado)
+   - Importación/exportación masiva de usuarios
+
+3. **Sistema de Roles y Permisos:**
+   - Roles predefinidos (Admin, Manager, User, Guest)
+   - Permisos granulares por módulo/funcionalidad
+   - Grupos de usuarios con permisos heredados
+   - Matriz de permisos visual para administradores
+   - Auditoría de cambios de permisos
+
+4. **Panel de Administración:**
+   - NO usar el admin de django, necesito que todo sea mediante una interfaz 
+   - Dashboard de usuarios activos/estadísticas
+   - Gestión visual de roles y permisos
+   - Reportes de seguridad y accesos
+
+**🏗️ ARQUITECTURA DE VISTAS:**
+- [x] OBLIGATORIO: Usar SOLO Class-Based Views (CBV)
+- [x] NO usar Function-Based Views en ningún caso
+- [x] Implementar mixins personalizados para funcionalidad común
+- [x] Seguir patrones CBV de Django: ListView, DetailView, CreateView, UpdateView, DeleteView
+- [x] Usar PermissionRequiredMixin para control de acceso
+- [x] Implementar vistas genéricas personalizadas cuando sea necesario
+
+**🧩 MIXINS OBLIGATORIOS:**
+- LoginRequiredMixin: Para todas las vistas
+- PermissionRequiredMixin: Para control de acceso granular
+- Mixins personalizados para auditoría y logs
+
+**🚫 RESTRICCIONES:**
+- NO implementar ninguna función de vista (def view_name)
+- NO usar decoradores @login_required (usar mixins)
+- NO mezclar CBV con FBV
+- Toda lógica debe estar en métodos de clase
+
+**🎨 REQUERIMIENTOS DE UI/UX:**
+- Estilo visual: Moderno y profesional, consistente con el diseño actual del proyecto
+- Responsivo: Sí
+- Tema de colores: Mantener paleta actual del proyecto
+- Componentes especiales: 
+  - Datatables con filtros y paginación
+  - Formularios de múltiples pasos (Primero crear el usuario, luego poder asignarle los permisos o un rol)
+  - Modales para acciones rápidas
+  - Indicadores de estado visual
+  - Dashboard con métricas para el administrador
+
+**🔧 REQUERIMIENTOS TÉCNICOS:**
+- Autenticación: Sessions
+- Seguridad: 
+  - Protección contra CSRF, XSS, SQL Injection
+  - Logging de eventos de seguridad
+
+
+**📁 ESTRUCTURA DE PROYECTO:**
+- [x] Agregar a proyecto existente en: C:\Users\GBYCGYYD\OneDrive\Proyecto\byc
+- Crear nueva app Django: gen_usuarios
+- Estructura modular:   
+  ```
+  gen_usuarios/
+  ├── models.py
+  ├── views.py
+  ├── urls.py
+  ├── demás archivos necesarios...
+  ├── templates/
+  └── static/
+  ```
+
+**🚀 PRIORIDADES:**
+1. [Alta] - Sistema básico de login/logout/registro
+2. [Alta] - Modelos de User extendido y Roles básicos
+3. [Alta] - Panel de administración de usuarios
+4. [Media] - Sistema de permisos granulares
+5. [Media] - Dashboard de estadísticas
+6. [Baja] - 2FA y funciones avanzadas de seguridad
+
+**📝 INFORMACIÓN ADICIONAL:**
+- Audiencia objetivo: Administradores del sistema BYC y usuarios finales
+- Integración: Debe integrarse con el sidebar existente (templates/includes/sidebar.html)
+- Idioma: Español (es-CL) - mantener consistencia con settings actuales
+- Datos de prueba: Generar usuarios de ejemplo con diferentes roles
+
+**🔒 REQUERIMIENTOS DE SEGURIDAD ESPECÍFICOS:**
+- Políticas de contraseñas configurables
+- Bloqueo automático por intentos fallidos
+- Logs de auditoría completos
+- Cumplimiento de mejores prácticas de Django Security
+
+**🎯 ENTREGABLES ESPERADOS:**
+- [x] Código funcional completo integrado al proyecto BYC
+- [x] Migraciones de base de datos
+- [x] Templates responsive integrados con el diseño actual
+- [x] Documentación técnica completa
+- [x] Manual de usuario para administradores
+- [x] Tests unitarios e integración
+- [x] Datos de ejemplo y fixtures
+- [x] Script de deploy/configuración
+- [x] Documentación correspondiente
+- [x] Actualización de documentación existente siempre y cuando corresponda
+
+**🔄 INTEGRACIÓN CON PROYECTO ACTUAL:**
+- Agregar enlaces en sidebar.html existente
+- Mantener idioma es-CL configurado
+- Configurar para que sea el login primero y luego que entre al sistema.
+- Crea todas las plantillas que correspondan

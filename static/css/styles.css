@@ -5,8 +5,8 @@
 
 /* Variables CSS para colores consistentes */
 :root {
-    --sidebar-bg: #212122;
-    --navbar-bg: #212122;
+    --sidebar-bg: #161717;
+    --navbar-bg: #161717;
     --sidebar-width: 230px;
     --navbar-height: 60px;
     --sidebar-transition: all 0.3s ease-in-out;
